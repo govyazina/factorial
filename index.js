@@ -13,10 +13,14 @@ function factIterat(num){
 
 // Рекурсивный расчет факториала
 function factRec(num){
-    let result = 0;
-
-    return result
+    if (num < 0 || (num % 1 !== 0)) {
+        return 'введите целое положительное число ¯\\_(ツ)_/¯ '
+    }
+    if (num === 0) {
+        return 1
+    }
+    return num *= factRec(num - 1)
 }
 
-console.log('итеративный метод: ',factIterat(3.2))
+console.log('итеративный метод: ',factIterat(3))
 console.log('рекурсивный метод: ',factRec(3))
